@@ -16,6 +16,8 @@ var questions = [
   var optionListEl = document.querySelector("#option-list");
   var questionResultEl = document.querySelector("#question-result");
   var timerEl = document.querySelector("#timer");
+  var startQuizPanel = document.querySelector("#start");
+  var startQuizButton = document.querySelector("#startButton");
   
   var questionIndex = 0;
   var correctCount = 0;
@@ -77,4 +79,10 @@ var questions = [
   
   // renderQuestion();
   optionListEl.addEventListener("click", checkAnswer);
+
+  startQuizButton.addEventListener("click", function(){
+    startQuizPanel.remove()
+
+    renderQuestion();
+  });
 

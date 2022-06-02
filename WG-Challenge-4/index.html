@@ -9,42 +9,49 @@
         .choices {
             list-style: none;
          }
-         #start {
+         /* #start {
              display:flex;
              justify-content: center;
              flex-direction: column;
-         }
+         } */
 
-         #start h1,h2 {
+         /* #start h1,h2 {
             text-align: center;
              border: 10px solid #adabab;
              border-radius: 100px;
-         }
+         } */
 
          .button {
             width: 100px;
             text-align:center;
             margin: 0 auto;
             border-radius: 100px;
-           
-         }
+            display: block;
+           }
+
+           .containter {
+            display:flex;
+             justify-content: center;
+             flex-direction: column;
+           }
+
+           .container h1, h2 {
+            text-align: center;
+             border: 10px solid #adabab;
+             border-radius: 100px;
+             }
 
     </style>
 </head>
 
 <body>
 
-    <div id="start"> 
+    <div class="container" id="start"> 
        <h1> Coding Quiz </h1> 
        <h2> Answer the questions before the timer runs out! Be careful, Incorrect answers will subtract ten seconds!  </h2>
     
-        <button class= button id="startButton"> Click to Start</button>
-
-        
-
-
-
-     </div>
+        <button class= "button" id="startButton"> Click to Start</button>
+    </div>
 
 
 
@@ -75,6 +82,18 @@
     <div id="question-result"></div>
 
     <script src="./assets/script.js"></script>
+
+    <div class = "container" id = "submitScore">
+        <h1> ALL DONE </h1>
+        <h2> Your Final Score is:</h2>
+        <p> Enter Initials </p>
+        <input type="text">
+        <button id="submitInitials" class= "button"> Submit </button>
+
+
+
+        
+    </div>
 
 </body>
 
