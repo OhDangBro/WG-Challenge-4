@@ -21,6 +21,8 @@ var questions = [
   var correctCount = 0;
   
   // add variables to hold the time and intervaliD for the timer
+  var timeKeep;
+  var intervaliD;
   
   function endQuiz() {
     // clear Interval
