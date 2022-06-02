@@ -18,6 +18,8 @@ var questions = [
   var timerEl = document.querySelector("#timer");
   var startQuizPanel = document.querySelector("#start");
   var startQuizButton = document.querySelector("#startButton");
+  var submitScorePanel = document.querySelector("#submitScore");
+  var quizContainer = document.querySelector("#quizContainer");
   
   var questionIndex = 0;
   var correctCount = 0;
@@ -40,8 +42,9 @@ var questions = [
     // check if time is 0 and if so end game
   
     //add a timer that will call updateTime every second
-  
-    questionEl.textContent = questions[questionIndex].question;
+    if (questionIndex < 2) {
+
+      questionEl.textContent = questions[questionIndex].question;
   
     optionListEl.innerHTML = "";
     questionResultEl.innerHTML = "";
@@ -54,10 +57,23 @@ var questions = [
       questionListItem.textContent = choices[i];
       optionListEl.append(questionListItem);
     }
+
+    } else {
+      submitScorePanel.style.display = "block";
+    quizContainer.style.display = "none";
+    }
+
+
+    
   }
   
   function nextQuestion() {
-    questionIndex++;
+    // for (i = 0; i < 1; i++) {
+    //   questionIndex++;
+    // }
+    questionIndex++
+    
+    
     // when all question are asked end quiz
     renderQuestion();
   }
@@ -79,6 +95,16 @@ var questions = [
   
   // renderQuestion();
   optionListEl.addEventListener("click", checkAnswer);
+
+
+// Loads/Hides  Panel //
+
+function hidePanel() {
+  submitScorePanel.style.display="none";
+};
+
+
+  // Click to start quiz //
 
   startQuizButton.addEventListener("click", function(){
     startQuizPanel.remove()
