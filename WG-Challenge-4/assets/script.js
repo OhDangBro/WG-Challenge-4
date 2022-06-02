@@ -75,6 +75,6 @@ var questions = [
     setTimeout(nextQuestion, 2000);
   }
   
-  renderQuestion();
+  // renderQuestion();
   optionListEl.addEventListener("click", checkAnswer);
 
