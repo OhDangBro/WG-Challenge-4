@@ -9,19 +9,8 @@
         .choices {
             list-style: none;
          }
-         /* #start {
-             display:flex;
-             justify-content: center;
-             flex-direction: column;
-         } */
-
-         /* #start h1,h2 {
-            text-align: center;
-             border: 10px solid #adabab;
-             border-radius: 100px;
-         } */
-
-         .button {
+         
+        .button {
             width: 100px;
             text-align:center;
             margin: 0 auto;
@@ -41,10 +30,20 @@
              border-radius: 100px;
              }
 
+             .timers {
+                text-align: center;
+             border: 10px solid #adabab;
+             border-radius: 100px;
+             }
+
     </style>
 </head>
 
+
 <body>
+
+    
+
 
     <div class="container" id="start"> 
        <h1> Coding Quiz </h1> 
@@ -55,31 +54,16 @@
 
 
 <div id = "quizContainer">
-    <div id="timer"></div>
+    
+    <div class = "timers" id="timer">  </div>
 
-    <div id="question"></div>
+    <div class="questions"  id="question"></div>
 
     <ul id="option-list" class="choices"></ul>
 
     <div id="question-result"></div>
 
     <!-- <div id="change-question">Change Question</div> -->
-
-    <div id="timer"></div>
-
-    <div id="question"></div>
-
-    <ul id="option-list"></ul>
-
-    <div id="question-result"></div>
-
-    <div id="timer"></div>
-
-    <div id="question"></div>
-
-    <ul id="option-list"></ul>
-
-    <div id="question-result"></div>
 
 </div>
 
@@ -89,7 +73,7 @@
         <p> Enter Initials </p>
         <input type="text">
         <button id="submitInitials" class= "button"> Submit </button>
-
+        <ul> Highscores! </ul>
 
 
         

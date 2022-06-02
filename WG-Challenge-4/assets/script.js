@@ -16,6 +16,7 @@ var questions = [
   var optionListEl = document.querySelector("#option-list");
   var questionResultEl = document.querySelector("#question-result");
   var timerEl = document.querySelector("#timer");
+  
   var startQuizPanel = document.querySelector("#start");
   var startQuizButton = document.querySelector("#startButton");
   var submitScorePanel = document.querySelector("#submitScore");
@@ -25,21 +26,29 @@ var questions = [
   var correctCount = 0;
   
   // add variables to hold the time and intervaliD for the timer
-  var timeKeep;
-  var intervaliD;
-  
-  function endQuiz() {
-    // clear Interval
-    // update DOM to indicate game is over
+  var time = 20;
+var intervalId;
+
+function endQuiz() {
+  clearInterval(intervalId);
+  var body = document.body;
+  body.innerHTML = "Game over, You scored " + correctCount;
+}
+
+function updateTime() {
+  time--;
+  timerEl.textContent = time;
+  if (time <= 0) {
+    endQuiz();
   }
-  
-  function updateTime() {
-    //decrement time
-    //if time is = end quiz
-  }
+}
   
   function renderQuestion() {
     // check if time is 0 and if so end game
+    if (time == 0) {
+      updateTime();
+      return;
+    }
   
     //add a timer that will call updateTime every second
     if (questionIndex < 2) {
@@ -87,11 +96,14 @@ var questions = [
         correctCount++;
       } else {
         questionResultEl.textContent = "Incorrect";
-        // subtract 2 seconds from time.
+        time = time - 2;
+      timerEl.textContent = time;
       }
     }
     setTimeout(nextQuestion, 2000);
   }
+
+  intervalId = setInterval(updateTime, 1000);
   
   // renderQuestion();
   optionListEl.addEventListener("click", checkAnswer);
