@@ -16,6 +16,18 @@ var questions = [
     choices: ["null", "0", "clear", "object"],
     answer: "null",
   },
+  {
+    question:
+      "What is the name of a value associated with an object?",
+    choices: ["method", "object2", "property", "object value"],
+    answer: "property",
+  },
+  {
+    question:
+      "What caps is used when using the function keyword?",
+    choices: ["any", "lowercase", "uppercase", "both lower and upper"],
+    answer: "lowercase",
+  },
 ];
 
 var questionEl = document.querySelector("#question");
@@ -58,7 +70,7 @@ function renderQuestion() {
   }
 
 
-  if (questionIndex < 3) {
+  if (questionIndex < 5) {
 
     questionEl.textContent = questions[questionIndex].question;
 
