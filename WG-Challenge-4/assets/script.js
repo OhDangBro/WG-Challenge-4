@@ -49,8 +49,7 @@ var intervalId;
 
 function endQuiz() {
   clearInterval(intervalId);
-  // // var body = document.body;
-  // body.innerHTML = "Game over, You scored " + correctCount;
+  var body = document.body;
   time = 20;
 }
 
@@ -116,13 +115,15 @@ function checkAnswer(event) {
     if (answer === questions[questionIndex].answer) {
       questionResultEl.textContent = "Correct";
       correctCount++;
+      alert("Correct!")
     } else {
       questionResultEl.textContent = "Incorrect";
       time = time - 2;
       timerEl.textContent = time;
+      alert("Incorrect!");
     }
   }
-  setTimeout(nextQuestion, 2000);
+  setTimeout(nextQuestion, 1000);
 }
 
 
@@ -140,7 +141,7 @@ function hidePanel() {
 function addLi() {
   var li = document.createElement("li");
   var submittedInitials = document.getElementById("textValue").value;
-  var textNode = document.createTextNode(submittedInitials + "  " + correctCount);
+  var textNode = document.createTextNode(submittedInitials + " scored " + correctCount + " points");
   li.appendChild(textNode);
   document.getElementById("list").appendChild(li);
 

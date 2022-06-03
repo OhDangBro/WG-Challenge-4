@@ -22,6 +22,11 @@
             display:flex;
              justify-content: center;
              flex-direction: column;
+             text-align: center;
+             border: 10px solid #adabab;
+             border-radius: 100px;
+             background-color: black;
+             color:floralwhite;
            }
 
            .container h1, h2 {
@@ -30,23 +35,49 @@
              border-radius: 100px;
              }
 
+             .container p {
+                 justify-content: center;
+             }
+
              .timers {
                 text-align: center;
              border: 10px solid #adabab;
              border-radius: 100px;
+             background-color: black;
+             color:floralwhite;
+             font-size: larger;
              }
 
              .questions, .choices {
                 text-align: center;
-             border: 10px solid #adabab;
+             border: 5px solid #adabab;
              border-radius: 100px;
+             background-color: black;
+             color:floralwhite;
+             font-size: larger;
             }
+
+           .choices {
+            padding: 70px;
+  border: 1px solid #4CAF50;
+  line-height: 5;
+  font-size: larger;
+   }
+
+   .containerp {
+       justify-content: center;
+   }
+
+   .body {
+       background-color:rgb(125, 122, 140);
+   }
+
 
     </style>
 </head>
 
 
-<body>
+<body class = "body">
 
     
 
@@ -76,7 +107,7 @@
     <div class = "container" id = "submitScore">
         <h1> ALL DONE </h1>
         <h2> Your Final Score is:</h2>
-        <p> Enter Initials </p>
+        <p class="containerp"> Enter Initials </p>
         <input type="text" id="textValue">
         <button onclick="addLi()" id="submitInitials" class= "button"> Submit </button>
         <div> HighScore </div>
@@ -85,13 +116,7 @@
         </ul>
 
         <button onclick="startOver()">Start Over</button>
-
-
-        
-
-
-        
-    </div>
+</div>
     <script src="./assets/script.js"></script>
 <script>
     hidePanel()
