@@ -36,6 +36,12 @@
              border-radius: 100px;
              }
 
+             .questions, .choices {
+                text-align: center;
+             border: 10px solid #adabab;
+             border-radius: 100px;
+            }
+
     </style>
 </head>
 
@@ -55,7 +61,7 @@
 
 <div id = "quizContainer">
     
-    <div class = "timers" id="timer">  </div>
+    <div class = "timers" id="timer"> </div>
 
     <div class="questions"  id="question"></div>
 
@@ -71,9 +77,17 @@
         <h1> ALL DONE </h1>
         <h2> Your Final Score is:</h2>
         <p> Enter Initials </p>
-        <input type="text">
-        <button id="submitInitials" class= "button"> Submit </button>
-        <ul> Highscores! </ul>
+        <input type="text" id="textValue">
+        <button onclick="addLi()" id="submitInitials" class= "button"> Submit </button>
+        <div> HighScore </div>
+        <ul id="list"> 
+            <!-- <li></li>     -->
+        </ul>
+
+        <button onclick="startOver()">Start Over</button>
+
+
+        
 
 
         
